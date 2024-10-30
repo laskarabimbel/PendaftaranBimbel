@@ -26,9 +26,9 @@
             <!-- Main Content -->
             <div class="main-content">
                 <section class="section">
-                    <div class="section-header">
+                    {{--  <div class="section-header">
                         <h1>@yield('title')</h1>
-                    </div>
+                    </div>  --}}
                     <div class="section-body">
                         <h2 class="section-title">@yield('title')</h2>
                         <p class="section-lead">@yield('desc')</p>

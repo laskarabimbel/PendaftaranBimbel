@@ -16,7 +16,7 @@
 <style type="text/css">
     :root {
         /* Colors */
-        --colors: #000;
+        --colors: #0076E6;
         --shadow: #eee;
     }
 
@@ -35,7 +35,7 @@
     }
 
     img.icon {
-        width: 250px;
-        height: 200px;
+        width: 200px;
+        height: 100px;
     }
 </style>
