@@ -12,11 +12,16 @@
 <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('/assets/css/components.css') }}">
 
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/apple-touch-icon.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon-16x16.png') }}">
+<link rel="manifest" href="{{ asset('assets/img/site.webmanifest') }}">
+
 <!-- Custom CSS -->
 <style type="text/css">
     :root {
         /* Colors */
-        --colors: #0076E6;
+        --colors: #000000;
         --shadow: #eee;
     }
 
@@ -35,7 +40,7 @@
     }
 
     img.icon {
-        width: 200px;
-        height: 100px;
+        width: 160px;
+        height: 90px;
     }
 </style>

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PendaftaranBimbelController;
+use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,11 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.auth.login');
-})->middleware(['guest']);
+Route::get('/', [PendaftaranBimbelController::class, 'create'])->name('pendaftaran-bimbel.create');
+Route::post('/', [PendaftaranBimbelController::class, 'store'])->name('pendaftaran-bimbel.store');
+Route::get('/selesai', [PendaftaranBimbelController::class, 'selesai'])->name('pendaftaran-bimbel.selesai');
 
 // matikan route ini jika .env email sudah di seting
+Route::get('/register', function () {
+    return redirect()->back();
+})->name('register');
+
 Route::get('/forgot-password', function () {
     return redirect()->back();
 })->name('password.request')->middleware(['guest']);
@@ -30,22 +36,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('/change-profile-avatar', [DashboardController::class, 'changeAvatar'])->name('change-profile-avatar');
     Route::delete('/remove-profile-avatar', [DashboardController::class, 'removeAvatar'])->name('remove-profile-avatar');
 
-    // route untuk superadmin jika diperlukan
-    // Route::middleware(['can:superadmin'])->group(function () {
-    //     Route::resources([
-    //         'user' => UserController::class,
-    //     ]);
-    // });
-
     // route untuk admin
     Route::middleware(['can:admin'])->group(function () {
         Route::resources([
             'user' => UserController::class,
+            'pendaftaran' => PendaftaranController::class,
         ]);
-    });
-
-    // route untuk user
-    Route::middleware(['can:user'])->group(function () {
-        //
+        Route::get('pendaftaran/{id}/download', [PendaftaranController::class, 'download'])->name('pendaftaran.download');
     });
 });

@@ -14,7 +14,7 @@ class AuthServiceProvider extends ServiceProvider
         // buat role permission disini
         // tambahkan superadmin jika diperlukan
         'admin' => ['admin'],
-        'user' => ['user'],
+        // 'user' => ['user'],
     ];
 
     /**

@@ -44,7 +44,6 @@
                         <div class="col-sm-9">
                             <select name="role" id="role"
                                 class="form-control text-capitalize @error('role') is-invalid @enderror">
-                                <option value="user">user</option>
                                 <option value="admin">admin</option>
                             </select>
                             @error('role')

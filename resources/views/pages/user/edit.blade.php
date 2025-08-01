@@ -45,7 +45,6 @@
                         <div class="col-sm-9">
                             <select name="role" id="role"
                                 class="form-control text-capitalize @error('role') is-invalid @enderror">
-                                <option value="user" {{ $item->role == "user" ? 'selected' : '' }}>user</option>
                                 <option value="admin" {{ $item->role == "admin" ? 'selected' : '' }}>admin</option>
                             </select>
                             @error('role')

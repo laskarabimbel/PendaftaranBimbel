@@ -59,9 +59,6 @@
                         </form>
                     </div>
                 </div>
-                <div class="mt-5 text-muted text-center">
-                    Belum Punya Akun? <a href="{{ route('register') }}">Register</a>
-                </div>
                 <div class="simple-footer">
                     Copyright 2024 &copy; {{ env('APP_NAME') }}.
                 </div>

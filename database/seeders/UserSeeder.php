@@ -14,15 +14,6 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory()->create([
-        //     'name' => 'Super Admin',
-        //     'email' => 'superadmin@gmail.com',
-        //     'email_verified_at' => now(),
-        //     'role' => 'superadmin',
-        //     'username' => 'superadmin',
-        //     'password' => Hash::make('password'),
-        // ]);
-
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
@@ -31,16 +22,5 @@ class UserSeeder extends Seeder
             'username' => 'admin',
             'password' => Hash::make('password'),
         ]);
-
-        User::factory()->create([
-            'name' => 'User',
-            'email' => 'user@gmail.com',
-            'email_verified_at' => now(),
-            'role' => 'user',
-            'username' => 'user',
-            'password' => Hash::make('password'),
-        ]);
-
-        // User::factory(19)->create();
     }
 }

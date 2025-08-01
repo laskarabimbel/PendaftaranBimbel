@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $query = User::whereNot('role', 'admin')->get();
+            $query = User::get();
             return DataTables::of($query)->make();
         }
 
