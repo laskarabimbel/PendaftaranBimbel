@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pendaftaran;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
-use Barryvdh\DomPDF\Facade\PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PendaftaranController extends Controller
 {
@@ -119,7 +119,7 @@ class PendaftaranController extends Controller
     {
         $pendaftaran = Pendaftaran::findOrFail($id);
 
-        $pdf = PDF::loadView('pages.pendaftaran.document', compact('pendaftaran'))->setPaper('a4', 'portrait');
+        $pdf = Pdf::loadView('pages.pendaftaran.document', compact('pendaftaran'))->setPaper('a4', 'portrait');
 
         return $pdf->download('formulir_pendaftaran_' . $pendaftaran->nama_siswa . '.pdf');
     }
